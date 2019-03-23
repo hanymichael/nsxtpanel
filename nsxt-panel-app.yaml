@@ -1,0 +1,91 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nsxtpanel-configmap
+  namespace: nsxtpanel-app
+data:
+  # The NSX-T config params
+  nsxIPaddress: 192.168.110.26
+  nsxUsername: admin
+  nsxtier0: bab9a262-c530-4406-ad8d-804014e2769f
+  # The app config params
+  pullInterval: "3"
+  appBrand: ACME
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: nsxtpanel-secret
+data:
+  # User base64 to encode the following passwords
+  nsxPassword: Vk13YXJlMSE=
+  appPass: Vk13YXJlMSE=
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nsx-t-panel-app
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nsxtpanel
+    spec:
+      containers:
+        - name: nsxtpanel
+          image: hanymichael/single-express-react-nsxt-panel:v0.6
+          ports:
+            - name: nodejs-port
+              containerPort: 3000
+          env:
+            - name: nsxIPaddress
+              valueFrom:
+                configMapKeyRef:
+                  name: nsxtpanel-configmap
+                  key: nsxIPaddress
+            - name: nsxUsername
+              valueFrom:
+                configMapKeyRef:
+                  name: nsxtpanel-configmap
+                  key: nsxUsername
+            - name: nsxPassword
+              valueFrom:
+                secretKeyRef:
+                  name: nsxtpanel-secret
+                  key: nsxPassword
+            - name: nsxtier0
+              valueFrom:
+                configMapKeyRef:
+                  name: nsxtpanel-configmap
+                  key: nsxtier0
+            - name: pullInterval
+              valueFrom:
+                configMapKeyRef:
+                  name: nsxtpanel-configmap
+                  key: pullInterval
+            - name: appBrand
+              valueFrom:
+                configMapKeyRef:
+                  name: nsxtpanel-configmap
+                  key: appBrand
+            - name: appPass
+              valueFrom:
+                secretKeyRef:
+                  name: nsxtpanel-secret
+                  key: appPass
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nsxtpanel-svc
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8090
+      targetPort: 3000
+      protocol: TCP
+      name: http
+  selector:
+    app: nsxtpanel
+
