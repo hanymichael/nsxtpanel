@@ -17,7 +17,7 @@ You can set the config from within the YAML file itself as follows:
 - NSS-T Username
 - Tier-0 Router ID
 - Update interval
-- App Brand (e.g. Domino’s)
+- App Brand (e.g. ACME)
 
 **K8s Secret:**
 - NSX-T Manager Password
