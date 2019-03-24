@@ -1,6 +1,6 @@
 # NSX-T Panel App
 
-The NSX-T Panel app is a lightweight application written in modern JS frameworks for reporting various NSX-T statistics and logical config. This was purpose built for one of my customer who wanted an easy/fast way to report the NSX-T T0 SNAT entries and the associated translations to the kubernetes namespaces/subnets. A native way to do this today via NSX-T is by configuring RBAC with vIDM, and creating read-only access to the developers or SREs to extract this data. The App is meant to simplify this workflow. 
+The NSX-T Panel app is a lightweight application written in modern JS frameworks for reporting various NSX-T statistics and logical config. This was purpose built for one of my customer who wanted an easy/fast way to report the NSX-T T0 SNAT entries and the associated translations to the kubernetes namespaces/subnets. A native way to do this today via NSX-T is by configuring RBAC with vIDM, and creating read-only access accounts for the developers or SREs to extract this data. The App is meant to simplify this workflow. 
 
 <img width="1417" alt="Screenshot 2019-03-22 17 31 01" src="https://user-images.githubusercontent.com/21146113/54880448-1a800280-4e5e-11e9-848e-4cf1107e04a0.png">
 
