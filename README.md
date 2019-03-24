@@ -1,4 +1,5 @@
 # NSX-T Panel App
+![alt text](https://www.dropbox.com/s/0tyapibwz0xfo4m/Screenshot%202019-03-22%2017.31.01.png)
 
 # Quick highlights:
 - This is a lightweight app running on Express/NodeJS (backend) and React (frontend).
@@ -28,9 +29,11 @@ You can set the config from within the YAML file itself as follows:
 - Apply the k8s config: ```kubectl apply -f nsxt-panel-app.yaml -n nsxtpanel-app```
  
 **Troubleshooting:**
+
 I added some tools to help here like net-tools (e.g. traceroute) and cURL. There is also a shell script called tshoot that you can run after you connect to the container as follows:
 
 ```kubectl exec -it <pod-name> -n nsxtpanel-app sh```
+
 then:
 
 ```sh tshoot.sh```
