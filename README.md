@@ -39,4 +39,4 @@ then:
 
 ```sh tshoot.sh```
 
-<img width="656" alt="TSHOOT" src="https://user-images.githubusercontent.com/21146113/54880508-a09c4900-4e5e-11e9-861c-0a3cc31709d5.png">
+<img width="556" alt="TSHOOT" src="https://user-images.githubusercontent.com/21146113/54880508-a09c4900-4e5e-11e9-861c-0a3cc31709d5.png">
