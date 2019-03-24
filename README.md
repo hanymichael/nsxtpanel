@@ -1,5 +1,6 @@
 # NSX-T Panel App
-![alt text](https://www.dropbox.com/s/0tyapibwz0xfo4m/Screenshot%202019-03-22%2017.31.01.png)
+
+<img width="1417" alt="Screenshot 2019-03-22 17 31 01" src="https://user-images.githubusercontent.com/21146113/54880448-1a800280-4e5e-11e9-848e-4cf1107e04a0.png">
 
 # Quick highlights:
 - This is a lightweight app running on Express/NodeJS (backend) and React (frontend).
