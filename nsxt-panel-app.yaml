@@ -5,21 +5,21 @@ metadata:
   namespace: nsxtpanel-app
 data:
   # The NSX-T config params
-  nsxIPaddress: 192.168.110.26
-  nsxUsername: admin
-  nsxtier0: bab9a262-c530-4406-ad8d-804014e2769f
+  nsxIPaddress: 192.168.110.26 # NSX-T Manager Hostname/IP Address
+  nsxUsername: admin # The NSX-T Manager API username
+  nsxtier0: bab9a262-c530-4406-ad8d-804014e2769f # The NSX-T Manager Tier-0 Router ID
   # The app config params
-  pullInterval: "3"
-  appBrand: ACME
+  pullInterval: "3" # The update intervals for the app to pull data from NSX-T Manager via APIs
+  appBrand: ACME # The company name/brand showing on the top nav-bar of the app
 ---
 apiVersion: v1
 kind: Secret
 metadata:
   name: nsxtpanel-secret
-data:
-  # User base64 to encode the following passwords
-  nsxPassword: Vk13YXJlMSE=
-  appPass: Vk13YXJlMSE=
+stringData:
+  # Those passwords will be encoded with base64 on the fly when the k8s secret is created
+  nsxPassword: VMware1!
+  appPass: VMware1!
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -88,4 +88,3 @@ spec:
       name: http
   selector:
     app: nsxtpanel
-
