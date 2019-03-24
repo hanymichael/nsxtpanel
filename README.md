@@ -29,7 +29,7 @@ You can set the config from within the YAML file itself as follows:
 - Create first a k8s namespace: ```kubectl create namespace nsxtpanel-app```
 - Apply the k8s config: ```kubectl apply -f nsxt-panel-app.yaml -n nsxtpanel-app```
  
-**Troubleshooting:**
+## Troubleshooting:
 
 I added some tools to help here like net-tools (e.g. traceroute) and cURL. There is also a shell script called tshoot that you can run after you connect to the container as follows:
 
