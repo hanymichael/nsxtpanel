@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nsxt-panel-ingress
+spec:
+  rules:
+    - host: nsxtpanel.apps.hypervizor.com
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: nsxtpanel-svc
+              servicePort: 80

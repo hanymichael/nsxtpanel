@@ -74,17 +74,3 @@ spec:
                 secretKeyRef:
                   name: nsxtpanel-secret
                   key: appPass
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nsxtpanel-svc
-spec:
-  type: LoadBalancer
-  ports:
-    - port: 80
-      targetPort: 3000
-      protocol: TCP
-      name: http
-  selector:
-    app: nsxtpanel
