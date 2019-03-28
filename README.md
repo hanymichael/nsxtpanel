@@ -36,15 +36,15 @@ You can set the config from within the YAML file itself as follows:
 - Create first a k8s namespace: `kubectl create namespace nsxtpanel-app`
 - Apply the k8s deployment: `kubectl apply -f 01-nsxtpanel-app-deployment.yaml -n nsxtpanel-app`
 
-**Expose the app - Option 1: K8s Service Type: LoadBalancer**
+**Option 1: Expose the app with K8s Service Type: LoadBalancer**
 
 - Create a K8s Service: `kubectl apply -f 02-K8s-Service-Option.yaml -n nsxtpanel-app`
 
-**Expose the app - Option 2: K8s Ingress**
+**Option 2: Expose the app with K8s Ingress**
 
 - Create a K8s Ingress: `kubectl apply -f 02-K8s-Ingress-Option.yaml -n nsxtpanel-app`
 
-**Optional: Create a Network Policy with zero-trust**
+**OPTIONAL: Create a Network Policy with zero-trust**
 
 - Create a K8s NP: `kubectl apply -f 03-Network-Policy-Option.yaml -n nsxtpanel-app`
 
