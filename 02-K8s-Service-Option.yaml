@@ -4,6 +4,7 @@ metadata:
   name: nsxtpanel-svc
 spec:
   type: LoadBalancer
+  # loadBalancerIP: 192.168.155.44
   ports:
     - port: 80
       targetPort: 3000
